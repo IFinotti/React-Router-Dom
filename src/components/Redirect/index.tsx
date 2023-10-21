@@ -14,15 +14,17 @@ export const Redirect = () => {
       setTime((t) => t - 1);
     }, 1000);
 
-    if (time =< 0) {
-      navigate('/')
+    if (time <= 0) {
+      navigate("/");
     }
-
+    return () => {
+      clearTimeout(timeout.current);
+    };
   }, [time]);
 
   return (
     <div>
-      <h1>Get out of here in: {time}</h1>
+      <h1>Getting out of here in: {time}</h1>
     </div>
   );
 };
