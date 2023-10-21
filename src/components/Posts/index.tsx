@@ -1,4 +1,4 @@
-import { useParams, useSearchParams } from "react-router-dom";
+import { Outlet, useParams, useSearchParams } from "react-router-dom";
 import "./style.css";
 
 export const Posts = () => {
@@ -11,6 +11,8 @@ export const Posts = () => {
       <h1>
         Post {`Param: ${id}`} {`QS: ${qs.get("page")}`}
       </h1>
+
+      <Outlet />
     </div>
   );
 };
